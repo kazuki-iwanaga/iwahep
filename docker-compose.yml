@@ -10,4 +10,3 @@ services:
     working_dir: /home/work
     volumes:
       - ./CMakeLists.txt:/home/work/CMakeLists.txt
-      - ./cmake:/home/work/cmake
