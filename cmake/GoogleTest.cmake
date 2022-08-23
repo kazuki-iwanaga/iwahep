@@ -5,7 +5,7 @@ include(FetchContent)
 FetchContent_Declare(
   googletest
   GIT_REPOSITORY https://github.com/google/googletest.git
-  GIT_TAG release-1.12.1
+  GIT_TAG release-${GOOGLE_TEST_VERSION}
 )
 # Disable unnecessary caches
 # https://qiita.com/shohirose/items/30e39949d8bf990b0462
