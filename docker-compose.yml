@@ -1,0 +1,12 @@
+version: '3'
+services:
+  gcc:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    image: gcc:ubuntu-22.04
+    container_name: gcc
+    tty: true
+    working_dir: /home/work
+    volumes:
+      - ./CMakeLists.txt:/home/work/CMakeLists.txt
