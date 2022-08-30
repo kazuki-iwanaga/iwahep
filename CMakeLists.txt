@@ -32,3 +32,6 @@ if(NOT googletest_POPULATED)
   FetchContent_Populate(googletest)
   add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})
 endif()
+
+enable_testing()
+add_subdirectory(test)
