@@ -14,7 +14,12 @@ env: # CMake build options
 
 jobs: # Define tasks
   build:
-    runs-on: ubuntu-latest
+    # https://docs.github.com/ja/actions/using-jobs/using-a-matrix-for-your-jobs
+    strategy:
+      matrix:
+        # https://docs.github.com/ja/actions/using-github-hosted-runners/about-github-hosted-runners
+        os: [ubuntu-22.04, macos-11]
+    runs-on: ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v3
