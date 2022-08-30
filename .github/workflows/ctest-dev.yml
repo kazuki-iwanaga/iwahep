@@ -5,9 +5,13 @@ name: ctest-dev # Workflow name
 
 on: # Trigger
   push:
-    branches: ["dev"]
+    branches:
+      - dev
+      
   pull_request:
-    branches: ["dev"]
+    branches:
+      - dev
+      - main
 
 env: # CMake build options
   BUILD_TYPE: Debug
