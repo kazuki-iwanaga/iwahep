@@ -6,7 +6,7 @@ name: ctest-dev # Workflow name
 on: # Trigger
   push:
     branches: ["dev"]
-  pull_requests:
+  pull_request:
     branches: ["dev"]
 
 env: # CMake build options
