@@ -26,6 +26,7 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE) # For Windows
 # FetchContent_MakeAvailable(googletest) # This command requires CMake>=3.14
 # Altanative commands for FetchContent_MakeAvailable
+# https://cmake.org/cmake/help/latest/module/FetchContent.html#overview
 # https://runebook.dev/ja/docs/cmake/module/fetchcontent
 FetchContent_GetProperties(googletest)
 if(NOT googletest_POPULATED)
