@@ -6,6 +6,7 @@ RUN apt update && apt install -y --no-install-recommends \
     build-essential \
     cmake \
     ca-certificates \
-    git
+    git \
+    libgsl-dev
 
 WORKDIR /home/work
