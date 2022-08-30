@@ -1,0 +1,1 @@
+int myadd(int, int);
