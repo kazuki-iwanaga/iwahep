@@ -6,7 +6,7 @@ services:
       dockerfile: ./docker/Dockerfile
     image: gcc:ubuntu-22.04
     container_name: gcc
-    env_file: docker-compose.env
+    env_file: .env
     tty: true
     working_dir: ${WORKING_DIR}
     volumes:
