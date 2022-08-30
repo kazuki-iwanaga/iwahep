@@ -3,6 +3,7 @@
 ## Required:
 - `CMake>=3.11`
 - `gcc>=5`
+- `gsl>=?2.7`
 
 ## How to Use
 ```
