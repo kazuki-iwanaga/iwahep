@@ -33,5 +33,12 @@ if(NOT googletest_POPULATED)
   add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})
 endif()
 
-enable_testing()
+# Add subdirectories
+# https://qiita.com/shohirose/items/45fb49c6b429e8b204ac
+add_subdirectory(src)
+
+# Activate CTest functions
+# https://cmake.org/cmake/help/latest/command/enable_testing.html
+# https://qiita.com/mrk_21/items/25ee7f00cebb9934b472
+enable_testing() # Should be written in ${PROJECT_SOURCE_DIR}/CMakeLists.txt
 add_subdirectory(test)
