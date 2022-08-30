@@ -1,4 +1,4 @@
-# iwahep
+# uthic
 
 ## Required:
 - `CMake>=3.11`
