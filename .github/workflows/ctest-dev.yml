@@ -1,0 +1,39 @@
+# GitHub Actions
+# https://docs.github.com/ja/actions
+
+name: ctest-dev # Workflow name
+
+on: # Trigger
+  push:
+    branches:
+      - dev
+      
+  pull_request:
+    branches:
+      - dev
+      - main
+
+env: # CMake build options
+  BUILD_TYPE: Debug
+
+jobs: # Define tasks
+  build:
+    # https://docs.github.com/ja/actions/using-jobs/using-a-matrix-for-your-jobs
+    strategy:
+      matrix:
+        # https://docs.github.com/ja/actions/using-github-hosted-runners/about-github-hosted-runners
+        os: [ubuntu-22.04, macos-11]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+    - name: Build
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+    
+    - name: Test
+      working-directory: ${{github.workspace}}/build
+      run: ctest -C ${{env.BUILD_TYPE}}
