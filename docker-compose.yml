@@ -6,10 +6,11 @@ services:
       dockerfile: ./docker/Dockerfile
     image: gcc:ubuntu-22.04
     container_name: gcc
+    env_file: .env
     tty: true
-    working_dir: /home/work
+    working_dir: ${WORKING_DIR}
     volumes:
-      - ./CMakeLists.txt:/home/work/CMakeLists.txt
-      - ./test:/home/work/test
-      - ./src:/home/work/src
-      - ./include:/home/work/include
+      - ./CMakeLists.txt:${WORKING_DIR}/CMakeLists.txt
+      - ./test:${WORKING_DIR}/test
+      - ./src:${WORKING_DIR}/src
+      - ./include:${WORKING_DIR}/include
