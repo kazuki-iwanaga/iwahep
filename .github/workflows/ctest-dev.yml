@@ -18,7 +18,7 @@ jobs: # Define tasks
     strategy:
       matrix:
         # https://docs.github.com/ja/actions/using-github-hosted-runners/about-github-hosted-runners
-        os: [ubuntu-22.04, macos-11]
+        os: [ubuntu-22.04, macos-11, windows-2022]
     runs-on: ${{ matrix.os }}
 
     steps:
