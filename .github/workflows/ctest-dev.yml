@@ -1,0 +1,30 @@
+# GitHub Actions
+# https://docs.github.com/ja/actions
+
+name: ctest-dev # Workflow name
+
+on: # Trigger
+  push:
+    branches: ["dev"]
+  pull_requests:
+    branches: ["dev"]
+
+env: # CMake build options
+  BUILD_TYPE: Debug
+
+jobs: # Define tasks
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+    - name: Build
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+    
+    - name: Test
+      working-directory: ${{github.workspace}}/build
+      run: ctest -C ${{env.BUILD_TYPE}}
