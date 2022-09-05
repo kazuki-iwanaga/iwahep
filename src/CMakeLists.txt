@@ -26,3 +26,12 @@ target_include_directories(
   PUBLIC
   ${PROJECT_SOURCE_DIR}/include
 )
+# Link GSL for the modified Bessel function
+# https://www.gnu.org/software/gsl/
+# https://stackoverflow.com/questions/44821615/linking-gsl-in-cmakelists-txt
+# https://askubuntu.com/questions/913493/gsl-config-not-found
+find_package(GSL REQUIRED)
+target_link_libraries(
+  uthic
+  GSL::gsl
+)

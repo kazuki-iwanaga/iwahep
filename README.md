@@ -3,10 +3,11 @@
 ## Required:
 - `CMake>=3.11`
 - `gcc>=5`
+- `gsl>=?2.7`
 
 ## How to Use
 ```
-git clone https://github.com/kazuki-iwanaga/iwahep.git -b cmake-3.11
+git clone https://github.com/kazuki-iwanaga/uthic.git
 cd iwahep
 docker compose up -d
 docker compose exec gcc bash

@@ -22,8 +22,11 @@ jobs: # Define tasks
     strategy:
       matrix:
         # https://docs.github.com/ja/actions/using-github-hosted-runners/about-github-hosted-runners
-        os: [ubuntu-22.04, macos-11]
+        # os: [ubuntu-22.04, macos-11] # macos-11 does not have installed GSL
+        os: [ubuntu-22.04]
     runs-on: ${{ matrix.os }}
+    # https://qiita.com/chihiro/items/341b579a07fac35fd1d7
+    timeout-minutes: 10
 
     steps:
     - uses: actions/checkout@v3
